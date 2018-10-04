@@ -12,10 +12,10 @@ namespace DiscordBot
     {
         static async Task Main(string[] args)
         {
-            await RunBot();
+            await RunBotAsync();
         }
 
-        static async Task RunBot()
+        static async Task RunBotAsync()
         {
             var services = new ServiceCollection()
                 .AddSingleton(new DiscordSocketClient())

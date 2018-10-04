@@ -13,10 +13,10 @@ namespace DiscordBot.Modules
         private readonly CommandService commands;
         private readonly AppSettings settings;
 
-        public HelpModule(IServiceProvider services)
+        public HelpModule(CommandService commands, AppSettings settings)
         {
-            this.commands = services.GetRequiredService<CommandService>();
-            this.settings = services.GetRequiredService<AppSettings>();
+            this.commands = commands;
+            this.settings = settings;
         }
 
         [Command("help"), Alias("h")]

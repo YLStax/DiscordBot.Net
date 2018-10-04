@@ -24,8 +24,7 @@ namespace DiscordBot
         {
             using (var w = new StreamWriter(filePath, false, Encoding.UTF8))
             {
-                var json = JsonConvert.SerializeObject(instance);
-                w.Write(json);
+                w.Write(JsonConvert.SerializeObject(instance));
             }
         }
 

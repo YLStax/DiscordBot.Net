@@ -14,11 +14,11 @@ namespace DiscordBot
         private readonly CommandService commands;
         private readonly AppSettings settings;
 
-        public StartupService(IServiceProvider services)
+        public StartupService(DiscordSocketClient client, CommandService commands, AppSettings settings)
         {
-            this.client = services.GetRequiredService<DiscordSocketClient>();
-            this.commands = services.GetRequiredService<CommandService>();
-            this.settings = services.GetRequiredService<AppSettings>();
+            this.client = client;
+            this.commands = commands;
+            this.settings = settings;
         }
 
         public async Task StartAsync()
